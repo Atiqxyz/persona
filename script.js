@@ -1,9 +1,3 @@
-const SMALL_SCREEN_MQ = window.matchMedia("(max-width: 1200px)");
-
-function isDesktopViewport() {
-    return !SMALL_SCREEN_MQ.matches;
-}
-
 document.addEventListener("keydown", function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
@@ -196,21 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
         window.dispatchEvent(new Event('resize'));
     }
 
-    function deactivateForSmallScreen() {
-        document.body.classList.remove('loaded', 'desktop-ready');
-        document.querySelectorAll('video, audio').forEach((media) => media.pause());
-
-        if (isSubmenuOpen) {
-            closeSubmenu();
-        }
-        if (isMusicPlayerOpen) {
-            closeMusicPlayer();
-        }
-    }
-
     function activateDesktopExperience(animateMenu) {
-        if (!isDesktopViewport()) return;
-
         if (desktopExperienceStarted) {
             applyDesktopReadyState(animateMenu);
             return;
@@ -222,21 +202,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(() => applyDesktopReadyState(animateMenu));
     }
 
-    function handleViewportChange() {
-        if (SMALL_SCREEN_MQ.matches) {
-            deactivateForSmallScreen();
-        } else {
-            activateDesktopExperience(false);
-        }
-    }
-
-    SMALL_SCREEN_MQ.addEventListener('change', handleViewportChange);
-
-    if (isDesktopViewport()) {
-        activateDesktopExperience(true);
-    } else {
-        preloadAllAssets().then(hideLoadingScreen).catch(hideLoadingScreen);
-    }
+    activateDesktopExperience(true);
 
     // Idle animation removed per user request
 
