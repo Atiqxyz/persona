@@ -755,16 +755,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (i === scActiveIndex) bar.classList.add('active');
             else bar.classList.remove('active');
         });
-        const labels = ['ITEM 1', 'ITEM 2', 'ITEM 3'];
+        const labels = ['GITHUB', 'RESEARCH', 'EMAIL'];
         const labelEl = scPanelEl ? scPanelEl.querySelector('.sc-nav-label') : null;
         if (labelEl) labelEl.textContent = labels[scActiveIndex] || labels[0];
     }
 
     function openSocialsLink() {
         const links = [
-            null, // Discord doesn't have a direct web link
-            'https://www.instagram.com/poldak._/',
-            'https://hackclub.enterprise.slack.com/team/U0AJAB37BUK'
+            'https://github.com/Atiqxyz',
+            'https://doi.org/10.5281/zenodo.22235005',
+            'mailto:atiqongithubig@gmail.com'
         ];
         const link = links[scActiveIndex];
         if (link) window.open(link, '_blank');
@@ -836,18 +836,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Update details panel
-        const titles = ['AUDIOPHILE', 'MACROPAD', 'PERSONA UI', 'NOTHING TO SEE HERE 🤨'];
+        const titles = ['ORBITAL DECAY', 'N-BODY GRAVITY', 'CELLULAR AUTOMATON', 'ASCII TRANSLATOR'];
         const subtexts = [
-            "- It's not maintained tho",
-            "- My project for flavortown",
-            "- Built with plain HTML/CSS/JS",
-            "- Ngl I added this cuz 3 items looked boring"
+            "A mathematical orbital-decay model and simulator, validated against published results.",
+            "A computational simulation that records celestial bodies and their gravitational interactions.",
+            "A cellular automaton built around 16 mathematically interacting states.",
+            "A browser-based tool for translating images and video into coloured ASCII."
         ];
         const links = [
-            'https://github.com/notwewnothing/SpotiFLac/releases/tag/v1.1.0',
-            'https://github.com/notwewnothing/workspace-commander',
-            'https://github.com/notwewnothing/persona',
-            null
+            'https://doi.org/10.5281/zenodo.22235005',
+            'https://github.com/Atiqxyz',
+            'https://github.com/Atiqxyz',
+            'https://github.com/Atiqxyz'
         ];
 
         document.getElementById('rs_detail_index').textContent = '0' + (rsActiveIndex + 1);
