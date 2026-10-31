@@ -2396,34 +2396,51 @@ body.desktop-ready .text.spawned {
 }
 
 @media (max-width: 1200px) {
-    body {
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        min-height: 100dvh;
-
-    }
-
-    #screen,
-    fh .side-index,
-    .music-toggle,
-    .footer-text,
-    .bottom-bar,
-    .music-player {
-        display: none !important;
-    }
-
-
-    .small-screen-notice {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: fixed;
-        inset: 0;
-        z-index: 20000;
-        padding: 24px;
-        box-sizing: border-box;
-    }
+ body { overflow: hidden; }
+ #screen { display:block !important; width:100vw; height:100dvh; overflow:hidden; }
+ .herovideo { object-fit:cover; }
+ .container { left:5vw !important; top:50% !important; width:90vw !important; transform:translateY(-50%) scale(.82) !important; transform-origin:left center !important; }
+ .container .text { font-size:clamp(34px,8vw,76px) !important; }
+ .side-index { left:12px !important; }
+ .bottom-bar { left:16px !important; right:16px !important; bottom:12px !important; width:auto !important; gap:8px !important; }
+ .bottom-bar .controls { display:none !important; }
+ .music-toggle { right:16px !important; top:16px !important; }
+ .music-player { right:12px !important; top:64px !important; }
+ .submenu-panels-container { padding:16px !important; }
+ .submenu-panel--prose { width:min(92vw,620px) !important; max-width:92vw !important; }
+ .submenu-panel--prose .bold-shape-container { width:100% !important; max-width:100% !important; }
+ .submenu-panel--prose .bold-shape-fg { padding:24px !important; }
+ .placeholder-title { font-size:clamp(30px,8vw,52px) !important; }
+ .placeholder-text { font-size:clamp(15px,3.6vw,20px) !important; line-height:1.45 !important; }
+ .panel-fullscreen { overflow-y:auto !important; }
+ .sc-root { width:100vw !important; gap:8px !important; }
+ .sc-bar,.sc-bar-red { width:92vw !important; }
+ .sc-label { font-size:clamp(16px,4vw,26px) !important; letter-spacing:1px !important; }
+ .sc-role { font-size:clamp(22px,6vw,42px) !important; }
+ .sc-stats { padding-right:4px !important; }
+ .sc-stat-num { font-size:clamp(14px,3.4vw,22px) !important; }
+ .resume-stack { top:5vh !important; left:4vw !important; width:92vw !important; transform:none !important; }
+ .resume-card { height:82px !important; }
+ .resume-card-inner { padding:10px 12px 10px 48px !important; }
+ .resume-title { font-size:clamp(24px,6vw,40px) !important; }
+ .resume-rank-number { font-size:42px !important; }
+ .resume-rank-label { font-size:16px !important; }
+ .resume-subtitle-bar { left:50px !important; right:8px !important; bottom:7px !important; height:24px !important; }
+ .resume-subtitle { font-size:17px !important; }
+ .resume-badge { width:42px !important; height:52px !important; }
+ .resume-badge-text { font-size:25px !important; }
+ .resume-detail-panel { position:relative !important; top:auto !important; right:auto !important; width:92vw !important; min-height:0 !important; margin:0 auto 24px !important; }
+ .sc-right-nav,.photos-wrapper { display:none !important; }
+}
+@media (max-width: 600px) {
+ .container { transform:translateY(-50%) scale(.66) !important; }
+ .bottom-bar .description { font-size:12px !important; }
+ .submenu-panel--prose .bold-shape-fg { padding:18px !important; }
+ .sc-bar-content { padding:0 8px !important; }
+ .sc-char,.sc-stats { display:none !important; }
+ .sc-main-top { gap:5px !important; }
+ .resume-detail-top-title { font-size:28px !important; }
+ .resume-detail-top-progress { font-size:26px !important; }
+ .resume-detail-row-title { font-size:20px !important; }
+ .resume-detail-bullet { font-size:17px !important; }
 }
